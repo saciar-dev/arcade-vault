@@ -21,16 +21,11 @@ This project pins `next@16.2.11` and `react@19.2.4` — versions newer than your
 
 When in doubt about an API's current shape, grep `node_modules/next/dist/docs/` before guessing.
 
-## Commands
-
-```bash
-npm run dev      # start dev server (Turbopack, by default)
-npm run build    # production build (Turbopack, by default)
-npm run start    # run the production build
-npm run lint     # eslint (flat config — see eslint.config.mjs)
-```
-
 There is no test runner configured yet.
+
+## Skills
+
+Usa siempre /frontend-design para diseñar la interfaz de usuario.
 
 ## Architecture
 
