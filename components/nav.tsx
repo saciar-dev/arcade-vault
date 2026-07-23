@@ -11,11 +11,11 @@ export function Nav() {
   const router = useRouter();
   const { user, logout } = useSession();
 
-  const isActive = (name: "biblioteca" | "salon" | "auth") => {
-    if (name === "biblioteca") {
-      return pathname === "/" || pathname.startsWith("/juego");
-    }
+  const isActive = (name: "inicio" | "biblioteca" | "salon" | "acerca-de" | "auth") => {
+    if (name === "inicio") return pathname === "/";
+    if (name === "biblioteca") return pathname.startsWith("/juegos");
     if (name === "salon") return pathname.startsWith("/salon");
+    if (name === "acerca-de") return pathname.startsWith("/acerca-de");
     return pathname.startsWith("/auth");
   };
 
@@ -34,11 +34,17 @@ export function Nav() {
           </div>
         </div>
         <div className="links">
-          <Link href="/" className={isActive("biblioteca") ? "active" : ""}>
+          <Link href="/" className={isActive("inicio") ? "active" : ""}>
+            Inicio
+          </Link>
+          <Link href="/juegos" className={isActive("biblioteca") ? "active" : ""}>
             Biblioteca
           </Link>
           <Link href="/salon" className={isActive("salon") ? "active" : ""}>
             Salón de la Fama
+          </Link>
+          <Link href="/acerca-de" className={isActive("acerca-de") ? "active" : ""}>
+            Acerca de
           </Link>
         </div>
         <div className="spacer"></div>
@@ -73,8 +79,14 @@ export function Nav() {
           MENÚ
         </div>
         <a
-          className={isActive("biblioteca") ? "active" : ""}
+          className={isActive("inicio") ? "active" : ""}
           onClick={() => go("/")}
+        >
+          Inicio
+        </a>
+        <a
+          className={isActive("biblioteca") ? "active" : ""}
+          onClick={() => go("/juegos")}
         >
           Biblioteca
         </a>
@@ -83,6 +95,12 @@ export function Nav() {
           onClick={() => go("/salon")}
         >
           Salón de la Fama
+        </a>
+        <a
+          className={isActive("acerca-de") ? "active" : ""}
+          onClick={() => go("/acerca-de")}
+        >
+          Acerca de
         </a>
         <a
           className={isActive("auth") ? "active" : ""}
