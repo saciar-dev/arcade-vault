@@ -1,6 +1,6 @@
 # SPEC 01 — Pantallas visuales del MVP de Arcade Vault
 
-> **Status:** aprobado
+> **Status:** implementado
 > **Depends on:** —
 > **Date:** 2026-07-22
 > **Objective:** Portar las 5 pantallas visuales del prototipo estático (references/resources/templates/) a rutas de App Router en Next.js 16, usando datos mock desde app/data y estado de sesión/puntuaciones en memoria, sin implementar ningún juego real.
@@ -112,28 +112,28 @@ Convenciones:
 
 ## Acceptance criteria
 
-- [ ] `/` muestra el hero, el buscador, los chips de categoría y el grid con los 8 juegos de `GAMES`.
-- [ ] Escribir en el buscador de `/` filtra las cards por título en tiempo real.
-- [ ] Seleccionar un chip de categoría en `/` filtra las cards por esa categoría, y "TODOS" muestra las 8.
-- [ ] Buscar un término sin resultados muestra el mensaje "NO HAY RESULTADOS".
-- [ ] Hacer clic en una card o su botón "JUGAR" navega a `/juego/[id]` con el juego correcto.
-- [ ] `/juego/[id]` muestra el cover, tags, descripción larga, stats (partidas, mejor global, dificultad) y un leaderboard de 10 filas.
-- [ ] El botón "JUGAR AHORA" en `/juego/[id]` navega a `/juego/[id]/jugar`.
-- [ ] El botón "VOLVER AL VAULT" en `/juego/[id]` navega a `/`.
-- [ ] `/juego/[id]/jugar` incrementa la puntuación automáticamente cada ~220ms mientras no está en pausa ni terminado.
-- [ ] El botón "PAUSA" detiene el incremento de puntuación y muestra el overlay "EN PAUSA"; "REANUDAR" lo reactiva.
-- [ ] El botón "FIN" abre el modal de fin de juego mostrando la puntuación final.
-- [ ] Guardar la puntuación en el modal la agrega a `scores` del `SessionProvider` y muestra el mensaje "PUNTUACIÓN GUARDADA".
-- [ ] "JUGAR DE NUEVO" en el modal reinicia puntaje, vidas, nivel y estado del juego sin salir de la pantalla.
-- [ ] "VOLVER AL VAULT" en el modal navega a `/`.
-- [ ] `/salon` muestra tabs por cada juego; cambiar de tab actualiza el podio (top 3) y la tabla de puntuaciones.
-- [ ] Si hay un usuario logueado (vía `/auth`), `/salon` muestra la fila "TU MEJOR MARCA"; si no hay usuario, esa fila no aparece.
-- [ ] `/auth` permite alternar entre "INICIAR SESIÓN" y "CREAR CUENTA", mostrando el campo de correo solo en la segunda.
-- [ ] Enviar el formulario de `/auth` (o el botón "JUGAR COMO INVITADO") actualiza el usuario en el `Nav` y redirige a `/`.
-- [ ] Con sesión iniciada, el `Nav` muestra el nombre de usuario en vez de "Iniciar Sesión", y permite cerrar sesión.
-- [ ] Recargar la página (F5) reinicia el usuario y las puntuaciones guardadas a su estado inicial (sin persistencia).
-- [ ] El menú móvil del `Nav` (hamburguesa) abre/cierra el panel lateral en viewports angostos.
-- [ ] `npm run build` completa sin errores.
+- [x] `/` muestra el hero, el buscador, los chips de categoría y el grid con los 8 juegos de `GAMES`.
+- [x] Escribir en el buscador de `/` filtra las cards por título en tiempo real.
+- [x] Seleccionar un chip de categoría en `/` filtra las cards por esa categoría, y "TODOS" muestra las 8.
+- [x] Buscar un término sin resultados muestra el mensaje "NO HAY RESULTADOS".
+- [x] Hacer clic en una card o su botón "JUGAR" navega a `/juego/[id]` con el juego correcto.
+- [x] `/juego/[id]` muestra el cover, tags, descripción larga, stats (partidas, mejor global, dificultad) y un leaderboard de 10 filas.
+- [x] El botón "JUGAR AHORA" en `/juego/[id]` navega a `/juego/[id]/jugar`.
+- [x] El botón "VOLVER AL VAULT" en `/juego/[id]` navega a `/`.
+- [x] `/juego/[id]/jugar` incrementa la puntuación automáticamente cada ~220ms mientras no está en pausa ni terminado.
+- [x] El botón "PAUSA" detiene el incremento de puntuación y muestra el overlay "EN PAUSA"; "REANUDAR" lo reactiva.
+- [x] El botón "FIN" abre el modal de fin de juego mostrando la puntuación final.
+- [x] Guardar la puntuación en el modal la agrega a `scores` del `SessionProvider` y muestra el mensaje "PUNTUACIÓN GUARDADA".
+- [x] "JUGAR DE NUEVO" en el modal reinicia puntaje, vidas, nivel y estado del juego sin salir de la pantalla.
+- [x] "VOLVER AL VAULT" en el modal navega a `/`.
+- [x] `/salon` muestra tabs por cada juego; cambiar de tab actualiza el podio (top 3) y la tabla de puntuaciones.
+- [x] Si hay un usuario logueado (vía `/auth`), `/salon` muestra la fila "TU MEJOR MARCA"; si no hay usuario, esa fila no aparece.
+- [x] `/auth` permite alternar entre "INICIAR SESIÓN" y "CREAR CUENTA", mostrando el campo de correo solo en la segunda.
+- [x] Enviar el formulario de `/auth` (o el botón "JUGAR COMO INVITADO") actualiza el usuario en el `Nav` y redirige a `/`.
+- [x] Con sesión iniciada, el `Nav` muestra el nombre de usuario en vez de "Iniciar Sesión", y permite cerrar sesión.
+- [x] Recargar la página (F5) reinicia el usuario y las puntuaciones guardadas a su estado inicial (sin persistencia).
+- [x] El menú móvil del `Nav` (hamburguesa) abre/cierra el panel lateral en viewports angostos.
+- [x] `npm run build` completa sin errores.
 
 ## Decisions
 
