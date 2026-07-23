@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { GAMES } from "@/app/data/games";
 import { seededScores } from "@/app/data/players";
 
-export default async function GameDetailPage({ params }: PageProps<"/juego/[id]">) {
+export default async function GameDetailPage({ params }: PageProps<"/juegos/[id]">) {
   const { id } = await params;
   const game = GAMES.find((g) => g.id === id);
   if (!game) notFound();
@@ -50,10 +50,10 @@ export default async function GameDetailPage({ params }: PageProps<"/juego/[id]"
             </div>
           </div>
           <div className="detail-actions">
-            <Link href={`/juego/${game.id}/jugar`} className="btn xl pulse">
+            <Link href={`/juegos/${game.id}/jugar`} className="btn xl pulse">
               ▶ JUGAR AHORA
             </Link>
-            <Link href="/" className="btn ghost lg">
+            <Link href="/juegos" className="btn ghost lg">
               VOLVER AL VAULT
             </Link>
           </div>
