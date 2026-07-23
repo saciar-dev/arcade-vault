@@ -1,6 +1,6 @@
 # SPEC 02 — Home, Biblioteca en /juegos y Acerca de
 
-> **Status:** aprobado
+> **Status:** implementado
 > **Depends on:** 01-mvp-pantallas-visuales
 > **Date:** 2026-07-23
 > **Objective:** Agregar una landing page en `/`, mover la Biblioteca de `/` a `/juegos` (con sus subrutas de detalle y reproductor), y agregar la pantalla "Acerca de" en `/acerca-de`, portando `home.jsx` y `about.jsx` del prototipo y actualizando el `Nav`.
@@ -41,23 +41,23 @@ Esta spec no introduce estructuras de datos nuevas. El home reutiliza `GAMES` de
 
 ## Acceptance criteria
 
-- [ ] `/` muestra la nueva landing: hero con título de 3 líneas y CTAs, sección "¿Por qué Arcade Vault?" con 4 feature cards, preview de 6 juegos, sección de stats, "Actividad en vivo" (ticker + top jugadores) y sección de precios con FAQ.
-- [ ] En `/`, el CTA "Explorar Juegos" del hero navega a `/juegos`.
-- [ ] En `/`, el CTA "Crear Cuenta" del hero navega a `/auth`.
-- [ ] En `/`, el botón "Ver Todos los Juegos" de la sección de preview navega a `/juegos`.
-- [ ] En `/`, el botón "Ver Salón" de la sección de actividad navega a `/salon`.
-- [ ] En `/`, el botón "Empezar Gratis" de precios y el CTA final "Insertar Moneda" navegan a `/auth` y `/juegos` respectivamente.
-- [ ] Las 6 mini-cards de la sección de preview muestran juegos reales de `GAMES` y cada una navega a `/juegos/[id]` con el id correcto.
-- [ ] `/juegos` muestra el mismo grid, buscador y filtro por categoría que antes vivían en `/` (comportamiento sin cambios).
-- [ ] `/juegos/[id]` y `/juegos/[id]/jugar` funcionan igual que antes (mismo comportamiento que `/juego/[id]` y `/juego/[id]/jugar` en la spec 01), solo que en la nueva URL.
-- [ ] Las rutas viejas `/juego/[id]` y `/juego/[id]/jugar` ya no existen (404 estándar de Next.js).
-- [ ] `/acerca-de` muestra el hero "Acerca de Arcade Vault", el texto de misión y los 3 highlights, sin ninguna sección de contacto.
-- [ ] El `Nav` muestra 4 links: Inicio, Biblioteca, Salón de la Fama, Acerca de.
-- [ ] Estando en `/`, el link "Inicio" del `Nav` aparece activo.
-- [ ] Estando en `/juegos`, `/juegos/[id]` o `/juegos/[id]/jugar`, el link "Biblioteca" del `Nav` aparece activo.
-- [ ] Estando en `/acerca-de`, el link "Acerca de" del `Nav` aparece activo.
-- [ ] El menú móvil del `Nav` incluye los mismos 4 links y resalta el activo igual que en desktop.
-- [ ] `npm run build` completa sin errores.
+- [x] `/` muestra la nueva landing: hero con título de 3 líneas y CTAs, sección "¿Por qué Arcade Vault?" con 4 feature cards, preview de 6 juegos, sección de stats, "Actividad en vivo" (ticker + top jugadores) y sección de precios con FAQ.
+- [x] En `/`, el CTA "Explorar Juegos" del hero navega a `/juegos`.
+- [x] En `/`, el CTA "Crear Cuenta" del hero navega a `/auth`.
+- [x] En `/`, el botón "Ver Todos los Juegos" de la sección de preview navega a `/juegos`.
+- [x] En `/`, el botón "Ver Salón" de la sección de actividad navega a `/salon`.
+- [x] En `/`, el botón "Empezar Gratis" de precios y el CTA final "Insertar Moneda" navegan a `/auth` y `/juegos` respectivamente.
+- [x] Las 6 mini-cards de la sección de preview muestran juegos reales de `GAMES` y cada una navega a `/juegos/[id]` con el id correcto.
+- [x] `/juegos` muestra el mismo grid, buscador y filtro por categoría que antes vivían en `/` (comportamiento sin cambios).
+- [x] `/juegos/[id]` y `/juegos/[id]/jugar` funcionan igual que antes (mismo comportamiento que `/juego/[id]` y `/juego/[id]/jugar` en la spec 01), solo que en la nueva URL.
+- [x] Las rutas viejas `/juego/[id]` y `/juego/[id]/jugar` ya no existen (404 estándar de Next.js).
+- [x] `/acerca-de` muestra el hero "Acerca de Arcade Vault", el texto de misión y los 3 highlights, sin ninguna sección de contacto.
+- [x] El `Nav` muestra 4 links: Inicio, Biblioteca, Salón de la Fama, Acerca de.
+- [x] Estando en `/`, el link "Inicio" del `Nav` aparece activo.
+- [x] Estando en `/juegos`, `/juegos/[id]` o `/juegos/[id]/jugar`, el link "Biblioteca" del `Nav` aparece activo.
+- [x] Estando en `/acerca-de`, el link "Acerca de" del `Nav` aparece activo.
+- [x] El menú móvil del `Nav` incluye los mismos 4 links y resalta el activo igual que en desktop.
+- [x] `npm run build` completa sin errores.
 
 ## Decisions
 
