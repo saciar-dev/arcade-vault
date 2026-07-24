@@ -1,6 +1,6 @@
 # SPEC 03 — Formulario de contacto en Acerca de con envío por Resend
 
-> **Status:** aprobado
+> **Status:** implementado
 > **Depends on:** 02-home-page
 > **Date:** 2026-07-23
 > **Objective:** Agregar la sección de Contacto (divisor + formulario) del template `about.jsx` debajo del hero existente en `/acerca-de`, y conectar el envío del formulario a un correo real usando Resend.
@@ -72,15 +72,15 @@ El correo se envía con Resend: `from: "Arcade Vault <onboarding@resend.dev>"`, 
 
 ## Acceptance criteria
 
-- [ ] `/acerca-de` muestra, debajo del hero existente, el divisor animado y la sección de Contacto con intro, 3 tips y el formulario (Nombre, Correo electrónico, Mensaje).
-- [ ] Enviar el formulario con algún campo vacío dispara la animación `shake` y no hace ninguna petición de red.
-- [ ] Enviar el formulario con un correo con formato inválido muestra un mensaje de error del servidor sin perder los datos escritos.
-- [ ] Enviar el formulario con datos válidos muestra un estado de carga, y al confirmarse el envío exitoso, muestra la animación de terminal (`[OK] Conectando...`, `[OK] Validando...`, `[OK] Transmitiendo...`, línea final con el nombre en mayúsculas).
-- [ ] Un envío exitoso hace llegar un correo real a `aciarenator@gmail.com` con nombre, correo y mensaje del remitente, usando `onboarding@resend.dev` como remitente y el correo del formulario como `reply_to`.
-- [ ] Si Resend falla (API key inválida, error de red, etc.), se muestra un mensaje de error en el formulario y el usuario puede reintentar sin perder lo escrito.
-- [ ] El botón "Enviar otro mensaje" del estado de éxito resetea el formulario a sus campos vacíos.
-- [ ] `RESEND_API_KEY` se lee desde variable de entorno; no hay ninguna API key hardcodeada en el código.
-- [ ] `npm run build` completa sin errores.
+- [x] `/acerca-de` muestra, debajo del hero existente, el divisor animado y la sección de Contacto con intro, 3 tips y el formulario (Nombre, Correo electrónico, Mensaje).
+- [x] Enviar el formulario con algún campo vacío dispara la animación `shake` y no hace ninguna petición de red.
+- [x] Enviar el formulario con un correo con formato inválido muestra un mensaje de error del servidor sin perder los datos escritos.
+- [x] Enviar el formulario con datos válidos muestra un estado de carga, y al confirmarse el envío exitoso, muestra la animación de terminal (`[OK] Conectando...`, `[OK] Validando...`, `[OK] Transmitiendo...`, línea final con el nombre en mayúsculas).
+- [x] Un envío exitoso hace llegar un correo real a `aciarenator@gmail.com` con nombre, correo y mensaje del remitente, usando `onboarding@resend.dev` como remitente y el correo del formulario como `reply_to`.
+- [X] Si Resend falla (API key inválida, error de red, etc.), se muestra un mensaje de error en el formulario y el usuario puede reintentar sin perder lo escrito.
+- [x] El botón "Enviar otro mensaje" del estado de éxito resetea el formulario a sus campos vacíos.
+- [x] `RESEND_API_KEY` se lee desde variable de entorno; no hay ninguna API key hardcodeada en el código.
+- [x] `npm run build` completa sin errores.
 
 ## Decisions
 
