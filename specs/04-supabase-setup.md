@@ -1,6 +1,6 @@
 # SPEC 04 — Conexión de Supabase al proyecto
 
-> **Status:** aprobado
+> **Status:** implementado
 > **Depends on:** 02-home-page
 > **Date:** 2026-07-25
 > **Objective:** Conectar el proyecto Supabase existente (`dgwchiwswxzuxfsegvdk`) a la aplicación Next.js, instalando y configurando los clientes de servidor y navegador (`@supabase/ssr` + `@supabase/supabase-js`) con sus variables de entorno, sin implementar todavía autenticación ni persistencia de datos.
@@ -38,13 +38,13 @@ Esta spec no introduce ningún modelo de datos nuevo (no hay tablas, no hay tipo
 
 ## Acceptance criteria
 
-- [ ] `package.json` incluye `@supabase/supabase-js` y `@supabase/ssr` como dependencias, y `npm install` corre sin errores.
-- [ ] `.env.local.example` documenta `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (sin valores reales), y `.env.local` sigue ignorado por git.
-- [ ] Existe `lib/supabase/client.ts` con un `createClient()` basado en `createBrowserClient` de `@supabase/ssr`.
-- [ ] Existe `lib/supabase/server.ts` con un `async createClient()` basado en `createServerClient` de `@supabase/ssr`, usando `await cookies()`.
-- [ ] Ninguna pantalla ni componente existente (`app/auth`, `components/session-provider.tsx`, `/salon`, etc.) cambia de comportamiento.
-- [ ] No se crea ninguna tabla ni migración en el proyecto Supabase `dgwchiwswxzuxfsegvdk` (sigue vacío).
-- [ ] `npm run build` completa sin errores.
+- [x] `package.json` incluye `@supabase/supabase-js` y `@supabase/ssr` como dependencias, y `npm install` corre sin errores.
+- [x] `.env.local.example` documenta `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (sin valores reales), y `.env.local` sigue ignorado por git.
+- [x] Existe `lib/supabase/client.ts` con un `createClient()` basado en `createBrowserClient` de `@supabase/ssr`.
+- [x] Existe `lib/supabase/server.ts` con un `async createClient()` basado en `createServerClient` de `@supabase/ssr`, usando `await cookies()`.
+- [x] Ninguna pantalla ni componente existente (`app/auth`, `components/session-provider.tsx`, `/salon`, etc.) cambia de comportamiento.
+- [x] No se crea ninguna tabla ni migración en el proyecto Supabase `dgwchiwswxzuxfsegvdk` (sigue vacío).
+- [x] `npm run build` completa sin errores.
 
 ## Decisions
 
